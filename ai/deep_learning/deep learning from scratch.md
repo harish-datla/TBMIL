@@ -1,166 +1,180 @@
 ## Math Foundations
 
-It took very long for humans to invent the concept of counting, it was just 42k years earlier the [earliest evidence](https://en.wikipedia.org/wiki/History_of_ancient_numeral_systems) for counting was found, ancient humans just used to incise parallel marks on a baboons bone for each numerical, as in 1 is I, 2 is II, 3 is III, 4 is II|I, you get it.
+It took very long for humans to invent the concept of counting. It was just 42k years earlier that the [earliest evidence](https://en.wikipedia.org/wiki/History_of_ancient_numeral_systems) for counting was found. Ancient humans used to incise parallel marks on a baboon's bone for each numerical value (e.g., 1 is I, 2 is II, 3 is III, 4 is II|I—you get it).
 
-it took approximately 40k years more at approximately 9th century BC(or much more as we cant put a finger on when the first human invented counting) to reach the famous roman numeral system and a thousand more years to get to present Arabic numerals(originating in India and adopted and spread to the world by Arabic mathematicians) and a thousand more for it to be fully adopted over the world. Its only just 500 years earlier, the world adopted the current Arabic numeral system.
+It took approximately 40k years more (or perhaps even longer, as we can’t pinpoint exactly when counting was invented) to reach the famous Roman numeral system, and a thousand more years to develop the present Arabic numerals (originating in India and later adopted and spread by Arabic mathematicians). It was only about 500 years ago that the world fully adopted the current Arabic numeral system.
 
-**what is addition ?**
-<details><summary>  </summary> <br>
-	 FOR DISCRETE VALUES: There isn't an official definition per say, but as you already know addition is just counting the total count of discrete quantities from individual  collection of discrete quantities(like quantifiable items that can be called a single unit, a single person, a single book, a single paper, a single letter and so on),
-	 FOR NON INTEGER REAL NUMBERS: Its finding the combined scale of the individual item. Its just an act of counting all the individual collection  of discrete quantities by putting them side by side
-	  FOR CONTINUOUS(NON DISCRETE) VALUES**: addition for continuous values can be thought of adding quantifiably infinitesimal values of individual continuous values and then scaling it back to the integer level. TOO MUCH ? take an example -> 1.43 + 2.21 -> to make them discrete values you have to split them in to individual units of 0.01 , so 1.43 becomes 143 and 2.21 becomes 221, now you can add them 143 + 221 = 364, but we have to scale back remember ?   so to scale back 364 from 0.01 to 1 units, we have to scale back to 3.64, if you are too confused by the scaling and scale out read until multiplication and division and revisit here.
-	</br>
+**What is addition?**
 
-**what is subtraction ?**
-<details><summary>  </summary> <br>
-	 FOR DISCRETE VALUES: Subtraction can be imagined as counting the absence of something, it can be then redefined in various ways.
-	 it can also be thought of as opposite of addition. a - b , means , how much should i add to b discrete quantities to make the total a discrete quantities.  you can also imagine it as counting the absence of b discrete values in a pool of a discrete values.
-	  FOR CONTINUOUS(NON DISCRETE) VALUES**:  The description above can be extended similar to the definition of adding non discrete values for subtraction(refer what is addition?)
-	</br>
-	
-**What is multiplication ?**
-<details><summary>  </summary> <br>
-	 FOR DISCRETE VALUES: Multiplication is just repeated addition, if you have x number of equal discrete number ofcollections/groups(say y), how many discrete units are there in total? intuition says to count one by one or just add the number of discrete values x times, represented by x*y. You can also call this scaling, because we are scaling y , x times !
-	  FOR CONTINUOUS(NON DISCRETE) VALUES**:  The description above can be extended similar to the definition of adding non discrete values for multiplication(refer what is addition?)
-	</br>
+<details>
+  <summary>Show Answer</summary>
 
-**what is division ?**
-<details><summary>  </summary> <br>
-	 FOR DISCRETE VALUES: unlike addition, subtraction and multiplication, intuition for division is not that straightforward, fundamentally because multiplication is a little bit compicated than addition. you can think of it in 5 terms 1) inverse of multiplication 2) splitting apart, 3) scaling down 4) consolidating 5) repeated subtraction
-	 1) Inverse of multiplication: how many x's make y (z = y/x) or how much we need to scale x to reach y?
-	    at this point our brain finds it difficult to grasp this as our brain is not used to seeing things at this scale.
-	2)  
-	  FOR CONTINUOUS(NON DISCRETE) VALUES**:  The description above can be extended similar to the definition of adding non discrete values for multiplication(refer what is addition?)
-	</br>
+  **For Discrete Values:**  
+  There isn’t an official definition per se, but addition is just counting the total of discrete quantities from individual collections (like single units, people, books, papers, letters, etc.).
 
-*Bonus Question*
-**What is area of rectangle and why is it formulated the way it is?**
-<details><summary>  </summary> <br>
-	 Sure its length times breadth(l*b) , but why ? why did we specifically multiply ? you might say , we are multiplying the length l with breadth b, akin to sweeping the length across the breadth, forming the area. But arent there infinite lines of length l on the breadth line ? is l*b infinite ?
-	 The answer is that we are counting the number of 1*1 squares inside the rectangle. there will be b no of 1*1 squares across the breadth and that forms a unit, and now we have l of these units across the length l, hence we multiply (l*b), so we abstract away area as the number of 1*1 squares in a given enclosed 2d-space. Any other definition will boil down to this fundamental idea(i think so, i have no proof)
-	 
-	Personal trivia : I didnt think about this until im like 18, much beyond my high school education one day, when i cant sleep, i was like why is rectangle area l*b, and i spent the next 5 days on it while simultaneously having existential crisis.
-	</br>
+  **For Non-Integer Real Numbers:**  
+  It’s about finding the combined scale of the individual items—essentially, placing the collections side by side.
 
-#### A very trivial introduction to algebra
-well, all you need to know about basic algebra is already covered(addition,subtraction,multiplication and division)barring couple of things. 1) the equality operator 2) variable naming
-The equality operator
-basically means what it says , everything put together to the left of the equality operator is equal to everything put together on the right side of it.
-Variable Naming.
+  **For Continuous (Non-Discrete) Values:**  
+  Think of it as adding many quantifiably infinitesimal values from each continuous quantity and then scaling the result back to an integer level. For example, to add 1.43 and 2.21, you could split them into units of 0.01 (so 1.43 becomes 143 and 2.21 becomes 221), add to get 364, and then scale back to 3.64.
+</details>
 
+**What is subtraction?**
 
+<details>
+  <summary>Show Answer</summary>
 
+  **For Discrete Values:**  
+  Subtraction can be seen as counting the absence of something. It can also be understood as the opposite of addition; for instance, in `a - b`, you’re essentially asking: “How many units do I need to add to `b` to reach `a`?”
 
+  **For Continuous (Non-Discrete) Values:**  
+  The same ideas apply as with addition, but with a focus on the difference between the scaled values.
+</details>
 
+**What is multiplication?**
 
+<details>
+  <summary>Show Answer</summary>
 
+  **For Discrete Values:**  
+  Multiplication is just repeated addition. If you have `x` groups each containing `y` discrete items, multiplying them (`x * y`) gives you the total number of items. It’s a form of scaling.
 
-#### NLP with deep learning
+  **For Continuous (Non-Discrete) Values:**  
+  The concept is analogous to the discrete case, with the appropriate adjustments for continuous measures.
+</details>
 
-##### Intro and word vectors.
+**What is division?**
 
+<details>
+  <summary>Show Answer</summary>
 
+  **For Discrete Values:**  
+  Division is a bit trickier. You can think of it in several ways:
+  1. **Inverse of Multiplication:** How many times does `x` fit into `y` (i.e. `z = y / x`)?
+  2. **Splitting Apart**
+  3. **Scaling Down**
+  4. **Consolidating**
+  5. **Repeated Subtraction**
 
+  **For Continuous (Non-Discrete) Values:**  
+  The ideas are similar to multiplication, adjusted for continuous measurements.
+</details>
 
+*Bonus Question*  
+**What is the area of a rectangle and why is it formulated the way it is?**
+
+<details>
+  <summary>Show Answer</summary>
+
+  The area of a rectangle is defined as length times breadth (`l * b`) because it represents the number of 1×1 squares that fit into the rectangle. There are `b` squares across the breadth and `l` rows of these squares along the length, so the total number of squares (and thus the area) is `l * b`.
+
+  **Personal Trivia:**  
+  I didn’t think about this until I was 18—long after high school—when I couldn’t sleep and began pondering why the area of a rectangle is `l * b`, leading to a 5-day existential crisis.
+</details>
+
+#### A Very Trivial Introduction to Algebra
+
+All you need to know about basic algebra is covered by addition, subtraction, multiplication, and division—with the addition of understanding the equality operator and variable naming.
+
+**The Equality Operator:**  
+This operator means that everything on the left-hand side is equal to everything on the right-hand side.
+
+**Variable Naming:**  
+*... (continue your explanation here)...*
+
+#### NLP with Deep Learning
+
+##### Intro and Word Vectors
+
+*(Your content here.)*
 
 #### Stanford Intro to LLM's
-# What is a language model?
 
-The classic definition of a language model (LM) is a probability distribution over sequences of tokens.
+# What is a Language Model?
 
-<details><summary> Explanation </summary> <br>
-	- Self explanatory definition , if you have,  say n words in your vocabulary and you want to make a sentence with L words in a certain order, a language model will you give the probability of that sentence being legit syntactically(grammatically) and semantically(world knowledge, google for more)
-	</br>
+A language model (LM) is a probability distribution over sequences of tokens.
 
-Suppose we have a vocabulary `V` of a set of tokens. A language model `p` assigns each sequence of tokens `x₁, …, x_L ∈ V` a probability (a number between 0 and 1):
+<details>
+  <summary>Explanation</summary>
 
-$$p(x_1, \dots, x_L)$$
+  Consider a vocabulary `V` of tokens. A language model `p` assigns a probability (between 0 and 1) to each sequence of tokens `x₁, …, x_L ∈ V`, denoted as:
 
-The probability intuitively tells us how "good" a sequence of tokens is.  For example, if the vocabulary is `V={ate,ball,cheese,mouse,the}` the language model might assign.
-$$ p({the}, {mouse}, {ate}, {the}, {cheese}) = 0.02,$$
-$$ p({the}, {cheese}, {ate}, {the}, {mouse}) = 0.01,$$
-$$ p({mouse}, {the}, {the}, {cheese}, {ate}) = 0.0001,$$
+  $$ p(x_1, \dots, x_L) $$
 
-although the  language model looks simple, the ability to assign meaningful probabilities to all sequences requires extraordinary and implicit linguistic abilities and world knowledge.
+  This probability indicates how "good" or likely a sequence is. For example, if  
+  `V = {ate, ball, cheese, mouse, the}`, then the LM might assign:
+  
+  $$ p(\{the\}, \{mouse\}, \{ate\}, \{the\}, \{cheese\}) = 0.02 $$
+  
+  and so on.
+</details>
 
-For example, the LM should assign the  *mouse the the cheese ate* a very low probability implicitly because its's ungrammatical(**syntactic knowledge**). The LM should assign *the mouse ate the cheese* higher probability than *the cheese ate the mouse* implicitly because of **World Knowledge:** both sentences are the same syntactically,  but they differ in semantic plausibility(semantic plausibility corresponds to world knowledge).
+Suppose we have a vocabulary `V`. A language model `p` assigns each sequence of tokens a probability:
 
-**Generation** -> a we can generate a sequence by the Language Model(defined above). A rudimentary way to do this would be to sample a sequence  $x_{1:L}$ from  language model $p$ with probability equal to $p(x_{1:L})$, denoted:
-$$x_{1:L} \sim p.$$
+$$ p(x_1, \dots, x_L) $$
 
-How to do this computationally efficiently depends on the form of the language model $p$. IN practice, we do not generally sample directly from a language model both because of limitations of real language models and because we sometimes wish to obtain not an average sequence but something closer to the "best" sequence.
+The model uses **syntactic knowledge** and **world knowledge** to assign these probabilities. For example, *"the mouse ate the cheese"* should have a higher probability than *"the cheese ate the mouse"*.
 
-<details><summary> EXPLANATION </summary> <br>
-	-Fancy of saying ->  given a language model(and/implicitly vocabulary) with above definition , we can generate as many sequences of words possible,  each permutation of the sequence has a certain probability associated with it. We cant just assume rudimentary high probability sequence to be the best, because well its probability and it might as well be an average sequence, what we want is the best sequence of tokens and we can achieve that by more refined techniques than just using a language model.
-	</br>
+**Generation:**  
+We generate sequences by sampling from the language model:
 
-**Auto regressive language models**.
-A common way to write the joint distribution $p(x_{1:L})$ of a sequence $x_{1:L}$ is using the **chain rule of probability**:
+$$ x_{1:L} \sim p $$
 
-$$ p(x_{1:L}) = p(x_1) p(x_2 \mid x_1) p(x_3 \mid x_1, x_2) \cdots p(x_L \mid x_{1:L-1}) = \prod_{i=1}^L p(x_i \mid x_{1:i-1}).$$ 
-Example :
-$$ \begin{align*} p({the},\,{mouse},\, {ate}, \,{the}, \,{cheese}) = \, & p(\,{the}) \\ & p(\,{mouse} \mid \,{the}) \\ & p(\,{ate} \mid \,{the}, \,{mouse}) \\ & p(\,{the} \mid \,{the}, \,{mouse}, \,{ate}) \\ & p(\,{cheese} \mid \,{the}, \,{mouse}, \,{ate}, \,{the}). \end{align*}$$
+More efficient generation often uses techniques that consider not just raw probabilities but also refined methods to select the best sequence.
 
-In particular, $p(x_i \mid x_{1:i-1})$ is a **conditional probability distribution** of the next token $x_i$ given the previous tokens $x_{1:i-1}$.
+<details>
+  <summary>Explanation</summary>
 
-Well this is just probability distribution, nothing fancy.
+  In other words, even though every permutation has a probability, we usually want the best sequence—not just any high-probability sequence. This is achieved using advanced sampling techniques.
+</details>
 
-an **auto regressive language model** is the one where each conditional distribution can be computed efficiently(for ex: using a feed forward neural network, more on that later or before)
-
-**Generation**
-Now to generate an entire sequence $x_{1:L}$ from autoregressive language model $p$, we sample one token at a time given the tokens generated so far.
+**Autoregressive Language Models**  
+We can write the joint probability as:
 
 $$
-\text{for } i = 1,  \dots, L: \\ $$
-$$ \hspace{1in} x_i \sim p(x_i \mid x_{1:i-1})^{1/T}
+p(x_1, \dots, x_L) = \prod_{i=1}^L p(x_i \mid x_{1:i-1})
 $$
 
-where  $T \ge 0$ is a **temperature** parameter that controls how much randomness we want from the language model:
+Each term `p(x_i ∣ x_{1:i-1})` is the conditional probability of token `x_i` given the previous tokens.
 
-- $T = 0$: deterministically choose the most probable token $x_i$ at each position i
-- $T = 1$: sample “normally” from the pure language model
-- $T = \infty$: sample from a uniform distribution over the entire vocabulary $V$
-
-However, if we just raise the probabilities to the power 1/T, the probability distribution may not sum to 1. We can fix this by re-normalizing the distribution. We call the normalized version $p_T(x_i \mid x_{1:i-1}) \propto p(x_i \mid x_{1:i-1})^{1/T}$ the **annealed** conditional probability distribution. For example:
-
-$$ p({cheese}) = 0.4, \quad\quad\quad p({mouse}) = 0.6$$
-
-$$p_{T=0.5}({cheese}) = 0.31, \quad\quad\quad p_{T=0.5}({mouse}) = 0.69$$
-
-$$p_{T=0.2}({cheese}) = 0.12, \quad\quad\quad p_{T=0.2}({mouse}) = 0.88$$
-
-$$p_{T=0}({cheese}) = 0, \quad\quad\quad p_{T=0}({mouse}) = 1 $$
-
-_Aside_: Annealing is a reference to metallurgy, where hot materials are cooled gradually, and shows up in sampling and optimization algorithms such as simulated annealing.
-
-_Technical note_: sampling iteratively with a temperature T parameter applied to each conditional distribution $p(x_i \mid x_{1:i-1})^{1/T}$ is not equivalent (except when T = 1) to sampling from the annealed distribution over length L sequences.
-
-<details><summary> EXPLANATION </summary> <br>
-	-Fancy of saying -> We can control the distribution of the language model according to our needs, for example T< 1 makes the distribution softer(i.e, softens the hard peaks in the probability distribution) , while T>1 makes the peaks more pronounced i.e, makes the distribution sharper. This will accordingly changes the model of our outputs. for example if we take 3 words as candidates for our current iteration, the next iteration can get us more interesting sentences with examples explained below.
-	
-	 Normalization formula is just calculating the new probabilities with the Temperature and normalizing it to 1. ie.,(a/(a+b), b/(a+b)).
-	 
-	 Hence as you can foresee , we can use T to get a language model that generates the best sequence texts.
-	</br>
-
-**Conditional generation**. More generally, we can perform conditional generation by specifying some prefix sequence $x_{1:i}$ (called a **prompt**) and sampling the rest $x_{i+1:L}$ (called the **completion**). For example, generating with T=0 produces
+**Generation Process:**  
+To generate a sequence from an autoregressive LM, we sample one token at a time:
 
 $$
-\newcommand{\generate}[1]{\stackrel{#1}{\rightsquigarrow}}
-\underbrace{\nl{the}, \nl{mouse}, \nl{ate}}_\text{prompt} \generate{T=0} \underbrace{\nl{the}, \nl{cheese}}_\text{completion}.$$
+\text{for } i = 1, \dots, L: \quad x_i \sim p(x_i \mid x_{1:i-1})^{1/T}
+$$
 
-If we change the temperature to T = 1, we can get more variety , for example, **its house** and **my homework**.
+where `T` is the **temperature** parameter controlling randomness:
+- `T = 0`: Always pick the most probable token.
+- `T = 1`: Sample normally.
+- `T = ∞`: Choose uniformly from the vocabulary.
 
-As we’ll see shortly, conditional generation unlocks the ability for language models to solve a variety of tasks by simply changing the prompt.
-<details><summary> EXPLANATION </summary> <br>
-	-Fancy of saying ->We can control how many varied inputs we can get, if we set T=0, we can only get the most probable completion ie., the cheese, however just tweaking the T=1, can generate interesting inputs and we can choose these interesting inputs and comprehensively choose the best randomizer value(i.e., T)
-	</br>
+Raising the probabilities to the power `1/T` and then renormalizing gives an **annealed** distribution.
+
+<details>
+  <summary>Explanation</summary>
+
+  Adjusting `T` softens or sharpens the peaks in the probability distribution, influencing the diversity of the generated text.
+</details>
+
+**Conditional Generation:**  
+By providing a prefix (prompt) `x₁:i`, we can generate a completion `x_{i+1:L}`:
+
+$$
+\underbrace{\text{the, mouse, ate}}_{\text{prompt}} \quad \rightsquigarrow_{T=0} \quad \underbrace{\text{the, cheese}}_{\text{completion}}
+$$
+
+Changing `T` can produce more varied results.
+
+<details>
+  <summary>Explanation</summary>
+
+  In summary, using a temperature `T` lets you control how diverse or predictable the output of your language model is.
+</details>
 
 ### Summary
 
-- A language model is a probability distribution p over sequences $x_{1:L}$.
-- Intuitively, a good language model should have linguistic capabilities and world knowledge.
-- An autoregressive language model allows for efficient generation of a completion $x_{i+1:L}$ given a prompt $x_{1:i}$.
-- The temperature can be used to control the amount of variability in generation.
-	
- 
+- A language model assigns a probability `p` over sequences.
+- It leverages both syntactic rules and world knowledge.
+- Autoregressive models generate text one token at a time.
+- The temperature parameter controls output variability.
