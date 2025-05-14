@@ -1,7 +1,7 @@
 # Principles for the OOPS paradigm
 ---
 
-Paradigms are mental models rather than programming language specific construct, you can implement OOPS paradigm in assembly , but you would probably be exhausted.
+Paradigms are mental models rather than programming language specific construct, you can implement OOPS paradigm in assembly , but you would probably be exhausted doing it.
 
 Various languages have their syntaxes friendly for certain paradigms, which makes it easy to implement that particular paradigm in it.
 
