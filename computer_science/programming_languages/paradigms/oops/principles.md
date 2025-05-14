@@ -62,7 +62,7 @@ Here is an example for class definition in python, java , c++ , php, ruby, kotli
   <summary><strong>Java</strong></summary>
   
   ```java
-  public class Product {
+  class Product {
       private String name;
       private double price; // private to mimic Python's __price
 
