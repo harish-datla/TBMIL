@@ -35,6 +35,8 @@ Here is an example for class definition in python, java , c++ , php, ruby, kotli
 ##### Example
 <details>
   <summary><strong>Python</strong></summary>
+  
+  ```python
   class Product:
       def __init__(self, name, price):
           self.name = name
@@ -49,35 +51,40 @@ Here is an example for class definition in python, java , c++ , php, ruby, kotli
   
   barone_chocolate.get_price()
   fivestar_chocolate.get_price()
+  ```
+
 </details>
 
 <details>
-<summary><strong>Python</strong></summary>
-public class Product {
-    private String name;
-    private double price; // private to mimic Python's __price
-    // Constructor
-    public Product(String name, double price) {
-        this.name = name;
-        this.price = price;
-    }
-    // Getter
-    public double getPrice() {
-        return price;
-    }
-    // Setter
-    public void setPrice(double price) {
-        this.price = price;
-    }
-    // Main method to create and test objects
-    public static void main(String[] args) {
-        Product baroneChocolate = new Product("BarOne Chocolate", 5);
-        Product fiveStarChocolate = new Product("FiveStar Chocolate", 10);
-        System.out.println("BarOne Price: " + baroneChocolate.getPrice());
-        System.out.println("FiveStar Price: " + fiveStarChocolate.getPrice());
-    }
-}
-</details>
+  <summary><strong>Java</strong></summary>
+  
+  ```java
+  public class Product {
+      private String name;
+      private double price; // private to mimic Python's __price
+      // Constructor
+      public Product(String name, double price) {
+          this.name = name;
+          this.price = price;
+      }
+      // Getter
+      public double getPrice() {
+          return price;
+      }
+      // Setter
+      public void setPrice(double price) {
+          this.price = price;
+      }
+      // Main method to create and test objects
+      public static void main(String[] args) {
+          Product baroneChocolate = new Product("BarOne Chocolate", 5);
+          Product fiveStarChocolate = new Product("FiveStar Chocolate", 10);
+          System.out.println("BarOne Price: " + baroneChocolate.getPrice());
+          System.out.println("FiveStar Price: " + fiveStarChocolate.getPrice());
+      }
+  }
+  ```
+  </details>
 #### 2. Encapsulation
 Encapsulation means hiding internal state and exposing only what’s necessary via public methods. It ensures internal data is safe from external misuse.
 
