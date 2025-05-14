@@ -34,60 +34,49 @@ This section introduces the five foundational pillars of OOP.
 Here is an example for class definition in python, java , c++ , php, ruby, kotlin and swift.
 ##### Example
 <details>
-<summary><strong>Python</strong></summary>
-```python
-class Product:
-    def __init__(self, name, price):
-        self.name = name
-        self.__price = price
-
-    def get_price(self):
-        return self.__price
-
-    def set_price(self, price):
-        self.__price = price
-# Creating objects
-barone_chocolate = Product("BarOne Chocolate", 5)
-five_star_chocolate = Product("FiveStar Chocolate", 10)
-
-barone_chocolate.get_price()
-fivestar_chocolate.get_price()
-```
+  <summary><strong>Python</strong></summary>
+  class Product:
+      def __init__(self, name, price):
+          self.name = name
+          self.__price = price
+      def get_price(self):
+          return self.__price
+      def set_price(self, price):
+          self.__price = price
+  # Creating objects
+  barone_chocolate = Product("BarOne Chocolate", 5)
+  five_star_chocolate = Product("FiveStar Chocolate", 10)
+  
+  barone_chocolate.get_price()
+  fivestar_chocolate.get_price()
 </details>
 
 <details>
 <summary><strong>Python</strong></summary>
-```java
 public class Product {
     private String name;
     private double price; // private to mimic Python's __price
-
     // Constructor
     public Product(String name, double price) {
         this.name = name;
         this.price = price;
     }
-
     // Getter
     public double getPrice() {
         return price;
     }
-
     // Setter
     public void setPrice(double price) {
         this.price = price;
     }
-
     // Main method to create and test objects
     public static void main(String[] args) {
         Product baroneChocolate = new Product("BarOne Chocolate", 5);
         Product fiveStarChocolate = new Product("FiveStar Chocolate", 10);
-
         System.out.println("BarOne Price: " + baroneChocolate.getPrice());
         System.out.println("FiveStar Price: " + fiveStarChocolate.getPrice());
     }
 }
-```
 </details>
 #### 2. Encapsulation
 Encapsulation means hiding internal state and exposing only what’s necessary via public methods. It ensures internal data is safe from external misuse.
