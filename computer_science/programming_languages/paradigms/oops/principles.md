@@ -1,7 +1,4 @@
-# Object-Oriented Programming (OOP) Notes
-
-Object-Oriented Programming (OOP) is a core programming paradigm based on the concept of **classes** and **objects**. It helps write code that is **modular**, **reusable**, and **maintainable**.
-
+# Principles for the OOPS paradigm
 ---
 
 ## Table of Contents
@@ -18,6 +15,7 @@ Object-Oriented Programming (OOP) is a core programming paradigm based on the co
 ---
 
 ## Principles of Object-Oriented Programming
+Object-Oriented Programming (OOP) is a core programming paradigm based on the concept of **classes** and **objects**. It helps write code that is **modular**, **reusable**, **efficient** and **maintainable**.
 
 OOP is based on several key principles that help structure and organize software effectively.
 
@@ -31,29 +29,66 @@ This section introduces the five foundational pillars of OOP.
 
 #### 1. Classes and Objects
 
-- A **class** is a blueprint for creating objects.
-- An **object** is an instance of a class.
-
+- A **class** is a blueprint for creating objects, it defines the properties(variables) and behaviour(functions) of an object.
+- An **object** is an instance of a class created using the blueprint.
+Here is an example for class definition in python, java , c++ , php, ruby, kotlin and swift.
 ##### Example
-
+<details>
+<summary><strong>Python</strong></summary>
 ```python
-class Car:
-    def __init__(self, make, model, year):
-        self.make = make
-        self.model = model
-        self.year = year
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.__price = price
 
-    def start_engine(self):
-        print(f"{self.make} {self.model}'s engine started.")
+    def get_price(self):
+        return self.__price
 
+    def set_price(self, price):
+        self.__price = price
 # Creating objects
-toyota_car = Car("Toyota", "Camry", 2022)
-chevrolet_car = Car("Chevrolet", "Malibu", 2023)
+barone_chocolate = Product("BarOne Chocolate", 5)
+five_star_chocolate = Product("FiveStar Chocolate", 10)
 
-toyota_car.start_engine()
-chevrolet_car.start_engine()
+barone_chocolate.get_price()
+fivestar_chocolate.get_price()
 ```
+</details>
 
+<details>
+<summary><strong>Python</strong></summary>
+```java
+public class Product {
+    private String name;
+    private double price; // private to mimic Python's __price
+
+    // Constructor
+    public Product(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    // Getter
+    public double getPrice() {
+        return price;
+    }
+
+    // Setter
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    // Main method to create and test objects
+    public static void main(String[] args) {
+        Product baroneChocolate = new Product("BarOne Chocolate", 5);
+        Product fiveStarChocolate = new Product("FiveStar Chocolate", 10);
+
+        System.out.println("BarOne Price: " + baroneChocolate.getPrice());
+        System.out.println("FiveStar Price: " + fiveStarChocolate.getPrice());
+    }
+}
+```
+</details>
 #### 2. Encapsulation
 Encapsulation means hiding internal state and exposing only what’s necessary via public methods. It ensures internal data is safe from external misuse.
 
