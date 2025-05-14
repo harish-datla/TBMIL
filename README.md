@@ -1,2 +1,3 @@
-# TWIL
-What i learned this week
+# TBMIL
+What i learned in two weeks
+
