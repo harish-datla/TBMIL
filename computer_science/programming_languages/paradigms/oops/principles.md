@@ -41,10 +41,13 @@ Here is an example for class definition in python, java , c++ , php, ruby, kotli
       def __init__(self, name, price):
           self.name = name
           self.__price = price
+
       def get_price(self):
           return self.__price
+
       def set_price(self, price):
           self.__price = price
+
   # Creating objects
   barone_chocolate = Product("BarOne Chocolate", 5)
   five_star_chocolate = Product("FiveStar Chocolate", 10)
@@ -62,19 +65,23 @@ Here is an example for class definition in python, java , c++ , php, ruby, kotli
   public class Product {
       private String name;
       private double price; // private to mimic Python's __price
+
       // Constructor
       public Product(String name, double price) {
           this.name = name;
           this.price = price;
       }
+
       // Getter
       public double getPrice() {
           return price;
       }
+
       // Setter
       public void setPrice(double price) {
           this.price = price;
       }
+
       // Main method to create and test objects
       public static void main(String[] args) {
           Product baroneChocolate = new Product("BarOne Chocolate", 5);
