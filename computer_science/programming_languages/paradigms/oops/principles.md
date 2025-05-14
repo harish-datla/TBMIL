@@ -2,9 +2,12 @@
 ---
 
 Paradigms are mental models rather than programming language specific construct, you can implement OOPS paradigm in assembly , but you would probably be exhausted.
+
 Various languages have their syntaxes friendly for certain paradigms, which makes it easy to implement that particular paradigm in it.
+
 You can certainly achieve OOPS paradigm in haskell(only some of it, you might miss on some of the principles/features)
 Refer [this](https://well-typed.com/blog/2018/03/oop-in-haskell/)
+
 well most languages have started supporting functional paradigm either fully or partially so i dont have examples for the opposite.
 
 
