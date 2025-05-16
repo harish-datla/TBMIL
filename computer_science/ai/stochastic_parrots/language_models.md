@@ -8,21 +8,21 @@
 
 A language model (LM) is a probability distribution over sequences of tokens.
 
-<details>
-  <summary>Explanation</summary>
+Detailed Explanation
 
-  Consider a vocabulary `V` of tokens. A language model `p` assigns a probability (between 0 and 1) to each sequence of tokens `x₁, …, x_L ∈ V`, denoted as:
+  - Consider a vocabulary `V` of tokens. A language model `p` assigns a probability (between 0 and 1) to each sequence of tokens `x₁, …, x_L ∈ V`, denoted as:
 
-  $$ p(x_1, \dots, x_L) $$
+  - $$ p(x_1, \dots, x_L) $$
 
-  This probability indicates how "good" or likely a sequence is. For example, if  
+  - This probability indicates how "good" or likely a sequence is. For example, if  
   `V = {ate, ball, cheese, mouse, the}`, then the LM might assign:
   
-  $$ p(\{the\}, \{mouse\}, \{ate\}, \{the\}, \{cheese\}) = 0.02 $$
+  - $$ p(\{the\}, \{mouse\}, \{ate\}, \{the\}, \{cheese\}) = 0.02 $$
+  - $$ p(\{the\}, \{cheese\}, \{ate\}, \{the\}, \{mouse\}) = 0.01 $$
+  - $$ p(\{mouse\}, \{the\}, \{the\}, \{cheese\}, \{ate}) = 0.0001 $$
+  Code Sample
+  - [View On Github](https://github.com/harish-datla/TBMIL/blob/main/computer_science/ai/stochastic_parrots/code_samples/language_models/introduction/probability_distribution_demo_with_gpt2.ipynb)
   
-  and so on.
-</details>
-
 Suppose we have a vocabulary `V`. A language model `p` assigns each sequence of tokens a probability:
 
 $$ p(x_1, \dots, x_L) $$
