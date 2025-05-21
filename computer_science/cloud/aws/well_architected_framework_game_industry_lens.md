@@ -1,14 +1,14 @@
 ## Table of Contents
 1. [Introduction](#introduction)
-- [Introduction to AWS Well-Architected Framework](#introduction-to-aws-well-architected-framework)
-- [Pillars of AWS Well-Architected Framework](#pillars-of-aws-well-architected-framework)
-- [Advantages of AWS Well-Architected Framework](#advantages-of-aws-well-architected-framework)
-- [Focus on Game Workloads](#focus-on-game-workloads)
-- [Approach for Applying the Framework](#approach-for-applying-the-framework)
-- [Best Practices for Games in the Cloud](#best-practices-for-games-in-the-cloud)
+    - [Introduction to AWS Well-Architected Framework](#introduction-to-aws-well-architected-framework)
+    - [Pillars of AWS Well-Architected Framework](#pillars-of-aws-well-architected-framework)
+    - [Advantages of AWS Well-Architected Framework](#advantages-of-aws-well-architected-framework)
+    - [Focus on Game Workloads](#focus-on-game-workloads)
+    - [Approach for Applying the Framework](#approach-for-applying-the-framework)
+    - [Best Practices for Games in the Cloud](#best-practices-for-games-in-the-cloud)
 2. [Definitions](#definitions)
-- [Overview](#overview)
-- [Gaming platform](#gaming-platform)
+    - [Overview](#overview)
+    - [Gaming platform](#gaming-platform)
 
 # Introduction
 
