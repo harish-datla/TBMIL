@@ -1,12 +1,14 @@
 ## Table of Contents
-1. Introduction(#introduction)
+1. [Introduction](#introduction)
 - [Introduction to AWS Well-Architected Framework](#introduction-to-aws-well-architected-framework)
 - [Pillars of AWS Well-Architected Framework](#pillars-of-aws-well-architected-framework)
 - [Advantages of AWS Well-Architected Framework](#advantages-of-aws-well-architected-framework)
 - [Focus on Game Workloads](#focus-on-game-workloads)
 - [Approach for Applying the Framework](#approach-for-applying-the-framework)
 - [Best Practices for Games in the Cloud](#best-practices-for-games-in-the-cloud)
-- [Definitions](#definitions)
+2. [Definitions](#definitions)
+- [Overview](#overview)
+- [Gaming platform](#gaming-platform)
 
 # Introduction
 
@@ -42,6 +44,8 @@ Guidance for securing and tuning performance is also provided.
 
 
 # Definitions
+
+## Overview
 
 The AWS well architected framework is based on five main pillars.
 - Operational Excellence.
@@ -105,7 +109,7 @@ Key performance indicators(KPIs)
   - Player lifetime value(LTV)
   - Average revenu per user(ARPU) or variations of it.
 
-Gaming platform
+## Gaming platform
   - Video games are developed to be played on broad number of platforms,beyond the typical web, desktop and apps for which softwares are usually made for
   - Video games are developed to be played on a gaming platform hat provides a player experience, which is usually comprised of the following
       - Client input controls
