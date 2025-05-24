@@ -111,14 +111,20 @@ Key performance indicators(KPIs)
 
 ## Gaming platform
   - Video games are developed to be played on broad number of platforms,beyond the typical web, desktop and apps for which softwares are usually made for
-  - Video games are developed to be played on a gaming platform hat provides a player experience, which is usually comprised of the following
-      - Client input controls
-      - Graphics
-      - Client Software(known in indusry as game client)
-      - Hardware
-      - Plaform-exclusive features to support gameplay(likehaptic feedback and adaptive triggers for console for example)
-
-
+  - Video games are developed to be played on a gaming platform that provides a player experience, which is usually comprised of the following
+    - Client input controls
+    - Graphics
+    - Client Software(known in indusry as game client)
+    - Hardware
+    - Plaform-exclusive features to support gameplay(likehaptic feedback and adaptive triggers for console for example)
+ - Gaming platforms are generally dilineated in to following catgories.
+    ### Consoles
+       - Consoles are entertainment systems specifically designed for playing games, including popular examples like the Sony PlayStation, Microsoft Xbox, and Nintendo Switch.
+       - They enable gameplay by allowing users to install physical or digital game content directly onto the console hardware provided by the platform manufacturer.
+       - Consoles can be handheld (e.g., Nintendo Switch) or stationary for home use (e.g., Xbox or PlayStation).
+       - Hardare and software are usually rigid in consoles, this doesnt give flexibility for gamers.
+    ### Personal Computer(PC)
+       - 
 
 
 
