@@ -118,21 +118,21 @@ Key performance indicators(KPIs)
     - Hardware
     - Plaform-exclusive features to support gameplay(likehaptic feedback and adaptive triggers for console for example)
  - Gaming platforms are generally dilineated in to following catgories.
-    ### Consoles
+     1. Consoles
        - Consoles are entertainment systems specifically designed for playing games, including popular examples like the Sony PlayStation, Microsoft Xbox, and Nintendo Switch.
        - They enable gameplay by allowing users to install physical or digital game content directly onto the console hardware provided by the platform manufacturer.
        - Consoles can be handheld (e.g., Nintendo Switch) or stationary for home use (e.g., Xbox or PlayStation).
        - Hardare and software are usually rigid in consoles, this doesnt give flexibility for gamers.
-    ### Personal Computer(PC)
+    2. Personal Computer(PC)
        - Laptop and PC, usually customizable to certain extents based on their limits.
        - Providex fleixibility and control for players, they also do mods.
-    ### Web games
+    3.  Web games
        - Games designed solely to be played using web browsers.
        - Accessable across platforms where browsers can be installed.
-    ### Mobile games
+    4.  Mobile games
        - Games that are devoloped to be played on a mobile phone, usually with a smart phone operating system, such as iOS or ANdroid.
        - These games are usually downloaded from a digital app store and installed onto the phone.
-    ### Nacent platforms
+    5.  Nacent platforms
        - Augmented Reality(AR), Virtual Reality(VR) and  Game Streaming.
        - Game streaming is aso sometimes referred to as cloud gaming.
        - Game streaming involves rendering the gameplay in the cloud and streaming to a thin client, typically an application(thin client) or web browser.
@@ -141,7 +141,7 @@ Key performance indicators(KPIs)
 
 
 ## Game server.
-       -  Game servers , sometimes referred to as dedicated game servers.
+    - Game servers , sometimes referred to as dedicated game servers.
        -  Game servers are used when developing a multiplayer game or when server authoratiative processing of gameplay events is required.
        - The game server is at the center of the game architecture, serving as the location where the core logic executes.
        - The core logic includes managing player and gamestate as well as managing the interactions between the connected game clients and the game server.
