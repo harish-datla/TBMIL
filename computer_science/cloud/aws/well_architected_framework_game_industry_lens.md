@@ -141,18 +141,27 @@ Key performance indicators(KPIs)
 
 
 ## Game server.
-    - Game servers , sometimes referred to as dedicated game servers.
-       -  Game servers are used when developing a multiplayer game or when server authoratiative processing of gameplay events is required.
-       - The game server is at the center of the game architecture, serving as the location where the core logic executes.
-       - The core logic includes managing player and gamestate as well as managing the interactions between the connected game clients and the game server.
-       - Game server is the most performance-sensitive aspects of a game architecture because it is resonsible for processing the inputs from a player's gaem cleint and properly distributing it to any other connected players in real-time.
-       - Therefore, it is important to ensure that the game server performace is optimized and has suficient capacity, especially when the game is launched and during peak gameplay periods.
-    ### Definitions
-        - Game server(or game server instance) - Compute resources, such as a virtual machine(VM), that hosts one more game server processes.
-        - Game server processes - A single instance of your game server build hosting a game session, which is an instance of your running game that players can connect to via a player session. 
-        - We refer to gameoptions server process and game session interchangeably.
-        - In AWS, there are multiple options for computer resources to host game servers, all of which provide access to scalable cloud-based capacity through elastic provisioning of resources.
+Game servers , sometimes referred to as dedicated game servers.
 
-    ### Amazon EC2 
+Game servers are used when developing a multiplayer game or when server authoratiative processing of gameplay events is required.
+
+The game server is at the center of the game architecture, serving as the location where the core logic executes.
+
+The core logic includes managing player and gamestate as well as managing the interactions between the connected game clients and the game server.
+
+Game server is the most performance-sensitive aspects of a game architecture because it is resonsible for processing the inputs from a player's gaem cleint and properly distributing it to any other connected players in real-time.
+
+Therefore, it is important to ensure that the game server performace is optimized and has suficient capacity, especially when the game is launched and during peak gameplay periods.
+
+Game server(or game server instance) - Compute resources, such as a virtual machine(VM), that hosts one more game server processes.
+
+Game server processes - A single instance of your game server build hosting a game session, which is an instance of your running game that players can connect to via a player session. 
+
+We refer to gameoptions server process and game session interchangeably.
+
+In AWS, there are multiple options for computer resources to host game servers, all of which provide access to scalable cloud-based capacity through elastic provisioning of resources.
+
+### Amazon EC2 
+-  cloud-based virtual servers, known as intances, with support for multiple versions of Linux and Windows.
 
 
