@@ -124,14 +124,35 @@ Key performance indicators(KPIs)
        - Consoles can be handheld (e.g., Nintendo Switch) or stationary for home use (e.g., Xbox or PlayStation).
        - Hardare and software are usually rigid in consoles, this doesnt give flexibility for gamers.
     ### Personal Computer(PC)
-       - 
+       - Laptop and PC, usually customizable to certain extents based on their limits.
+       - Providex fleixibility and control for players, they also do mods.
+    ### Web games
+       - Games designed solely to be played using web browsers.
+       - Accessable across platforms where browsers can be installed.
+    ### Mobile games
+       - Games that are devoloped to be played on a mobile phone, usually with a smart phone operating system, such as iOS or ANdroid.
+       - These games are usually downloaded from a digital app store and installed onto the phone.
+    ### Nacent platforms
+       - Augmented Reality(AR), Virtual Reality(VR) and  Game Streaming.
+       - Game streaming is aso sometimes referred to as cloud gaming.
+       - Game streaming involves rendering the gameplay in the cloud and streaming to a thin client, typically an application(thin client) or web browser.
+       - Game streaing allows a player to play a game that is entirely hosted remotely, typically in the cloud by a game streaming service provider.
+       - In game streaming, the player connects to a cloud-based game through a web browser ro a thin client provided by the cloud gaming service provider. 
 
 
+## Game server.
+       -  Game servers , sometimes referred to as dedicated game servers.
+       -  Game servers are used when developing a multiplayer game or when server authoratiative processing of gameplay events is required.
+       - The game server is at the center of the game architecture, serving as the location where the core logic executes.
+       - The core logic includes managing player and gamestate as well as managing the interactions between the connected game clients and the game server.
+       - Game server is the most performance-sensitive aspects of a game architecture because it is resonsible for processing the inputs from a player's gaem cleint and properly distributing it to any other connected players in real-time.
+       - Therefore, it is important to ensure that the game server performace is optimized and has suficient capacity, especially when the game is launched and during peak gameplay periods.
+    ### Definitions
+        - Game server(or game server instance) - Compute resources, such as a virtual machine(VM), that hosts one more game server processes.
+        - Game server processes - A single instance of your game server build hosting a game session, which is an instance of your running game that players can connect to via a player session. 
+        - We refer to gameoptions server process and game session interchangeably.
+        - In AWS, there are multiple options for computer resources to host game servers, all of which provide access to scalable cloud-based capacity through elastic provisioning of resources.
 
-
-
-
-
-
+    ### Amazon EC2 
 
 
