@@ -308,4 +308,38 @@ AWS offers multiple services to help implement these messaging patterns in your 
 ## Live Game Operations (Live Ops)
 - Liveops is a style of game management and operations that treats a game as a live service and continually delivers new features, updates, promotions, in-game events, and improvements to the launched game to improve the experience for the player community.
 - This is unlike the traditional way, where games were delivered as products rather than services, and new content and features were frequently incorporated in to subsequent release or sequels reather than in to the launched product.
-- 
+- Liveops approach to game management is beneficial for mobile games especially , with this approach a game operations team can launch a game and maintain an engaged player community through experimentation, promotions, in-game event, adn new innovations to keep players entertained.
+- This approach has additional benefits by unlocking and incorporatinr new player enagegemtn strategies seamlessly and also drive recurring revenue streams.
+- However it requires more operational expertise(For exampe, the need for cloud or ackend technical infra and identifying and responding to isses that arise in game that impacts player experience/ revenue)
+
+## General Design Principles
+- AWS well architected framwork identifies the following general desing principles to facilitate good design int he cloud for games workloads:
+
+### Understand player behaviour and usage patterns to evolve the game and protect players
+- To drive improvement continually to your game and effectively manage the player experience, the following points are important to keep in mind.
+  - Gain visibility into how players interact with your game and each other
+  - Use that insight to drive continuous game improvements
+  - Monitor and control operational and infrastructure costs
+  - Detect and respond to unauthorized usage that could harm the player experience
+
+### Use technologies that simplify game operations and increase development speed
+- Adopt new tehcnologies that can improve delivery speed and reduce operational overhead for new features and updates
+- Games are hits-driven and ther are many choices for players to consider, so moving quickly and adpating to change i critical for the success of a game.
+- Choose between self-managed software or equivalent managed services (AWS, AWS Partners)
+
+### Optimize your architecture to improve metrics that reflect actual player experience
+- Always keep in mind about player experience when you adapt and evolve your architecture over time.
+- Games workloads should be ale to withstand and minimize the impact of failures to prevent widespread disruptions to gameplay.
+- Game features and systems that arent critically dependent on each other should be de-coupled to reduce the blast radius of failures and isolate player impacting issues.
+  
+### Design infrastructure to meet peak player concurrency and dynamically scale as needed
+- To scale infra to meet player demand, preemptive scaling can be done using player session and login metrics before systems becoem overloaded.
+- Reactive system utilization metrics, such as CPU and memory consumption, can be used to scale after systems become overloaded.
+- This dynamic scaling approach helps us to reduce the costs of operating your game.
+
+### Implement runbooks to improve game operations
+- Operational runbooks should be used to help you consistently manage recurring game operations tasks.
+- Runbooks should exist for common game operations workflows such as
+    - investigating and responding to player reports
+    - managing infrastructure pre-scaling activities to prepare for anticipated large-sclae events like new season launches and game content releases.
+    - to address typical game maintenance activites.
