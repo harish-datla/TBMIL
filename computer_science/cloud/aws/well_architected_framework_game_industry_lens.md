@@ -246,5 +246,37 @@ You need to keep the following in mind and correspdongin option you have before 
 - performance requirements
 - scale
 
-## Game client.
+## Game client
+- Game client represents the software and/or  hardware a player uses to play the game
+- Game client translates player inputs into messages sent to the server for processing
+- Game client handles server responses and renders outputs (e.g., graphics) to the player
+- In realtime-networked multiplayergames, the game client usually maintains a persistent network connection to the game server for the duration of session to reduce network latency and minimize processing time.
+- The game client might also interact via represetationalstate transfer (REST) with a game server or backend services.
 
+## Messaging 
+- There are typically three primary categories of messages in games:
+    - Player engagement messaging targeted at a specific user or cohort of users(e.g., game invites, push notifications)
+    - Group messaging between players (in-game chat)
+    - Service-to-service messaging (e.g., JSON payloads for app-server, app-thirdparty or server-server messaging )
+
+Common implementation patterns for messaging:
+    - Publisher-subscriber (pub-sub)
+    - Asynchronous processing archiecture patterns
+    
+AWS offers multiple services to help implement these messaging patterns in your game
+
+### Amazon simple notification service (Amazon SNS)
+- SNS is a managed service for delviering messages between publishers and subscribers using pub-sub architecture pattern.
+- SNS can be used for push notifications to clients as well as service-to-service messaging use cases.
+- Publishers send messages via API to amazon SNS, which delivers the messages asyncrhonously to subscribing apps.
+- SNS can deliver push notifications directly to mobile clients or desktops with support for some of the most widely used push notification services out of the box.
+
+### Amazon simple queue service (Amazon SQS)
+- SQS is a fully managed queue services that makes it easy to integrate game servers and your game regardless of programming languaged used in each.
+- Many games tasks can be decoupled and handled in the backgorund such as updating a leaderboard or playtime values in a database.
+- This approach is very effective to decouple various parts of your game and independently scale the player-facing features from backend processing.
+
+** Note **
+    SNS is a push based mechanism and SQS is pull based mechanism, the publishing part more or less remains the same.
+
+### Amazon Managed Streaming for Apache Kafka (Amazon MSK)
