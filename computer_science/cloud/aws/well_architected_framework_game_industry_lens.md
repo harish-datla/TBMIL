@@ -306,4 +306,6 @@ AWS offers multiple services to help implement these messaging patterns in your 
     - Transactional use cases such as supporting multi-factor authentication tokens, and order confirmation and password reset emails.
 
 ## Live Game Operations (Live Ops)
+- Liveops is a style of game management and operations that treats a game as a live service and continually delivers new features, updates, promotions, in-game events, and improvements to the launched game to improve the experience for the player community.
+- This is unlike the traditional way, where games were delivered as products rather than services, and new content and features were frequently incorporated in to subsequent release or sequels reather than in to the launched product.
 - 
