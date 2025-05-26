@@ -280,3 +280,30 @@ AWS offers multiple services to help implement these messaging patterns in your 
 > SNS is a push based mechanism and SQS is pull based mechanism, the publishing part more or less remains the same.
 
 ### Amazon Managed Streaming for Apache Kafka (Amazon MSK)
+- Amazon MSK is a fully managed service that makes it easy to build datastreaming and producer/consumer applications using Apache Kafka.
+- Kafka is typically used for ingesting and processing real-time streaming data and can be used for service-to-service messaging.
+
+
+>**Note**
+> The following is straight up copied from stack overflow.
+> Apache Kafka and Amazon SQS are both used for message streaming but are not the same.Apache Kafka follows the publish subscriber model, where the producer sends an event/message to a topic, and one or more consumers are subscribed to that topic to get the event/message. In the topic, you find partitions for parallel streaming.
+> There is a consumer group concept once. When a message is read from a partition of topics it will be committed to identify it already read by that consumer group to avoid inconsistency in reading in concurrent programming. However, other consumer groups can still read that message from the partition.Where Amazon SQS follows Queue and the queue can be created in any region of Amazon SQS. You can push messages to Queue and only one consumer can subscribe to each Queue and pull messages from the Queue. That's why SQS is pull-based streaming.
+> SQS Queues are of two types: FIFO and Standard.There is another concept in AWS which is Amazon SNS, which is published subscriber-based like Kafka, but there is not any message retention policy in SNS. It's for instant messaging like email, SMS, etc. It can only push messages to subscribers when the subscribers are available. Otherwise, the message will be lost.
+> However, SQS with SNS can overcome this drawback. Amazon SNS with SQS is called the fanout pattern. In this pattern, a message published to an SNS topic is distributed to multiple SQS queues in parallel and the SQS queue assures persistence, because SQS has a retention policy. It can persist message for up to 14 days(default 4 days). Amazon SQS with SNS can achieve high throughput parallel streaming and can replace Apache Kafka.
+
+### Amazon ElastiCache(Redis OSS)
+- Provides a fully managed in-memory data stre which include support for the popular pub/sub feature that is commonly used for developing chat room applications and high-performance service-to-service messaging.
+- Redis also supports rich data types, such as lists and sets, that enable developers to user Redis for high-performance queueing.
+
+### Amazon PinPoint
+- Provide user engagament messaging through
+    - Email
+    - SMS
+    - Voice
+    - Push Notifications
+- Amazon pinpoint can be used to
+    - Deliver user engagement messages to players to invite them back to the game
+    - Transactional use cases such as supporting multi-factor authentication tokens, and order confirmation and password reset emails.
+
+## Live Game Operations (Live Ops)
+- 
