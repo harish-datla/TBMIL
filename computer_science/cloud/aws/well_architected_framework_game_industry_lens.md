@@ -141,49 +141,74 @@ Key performance indicators(KPIs)
 
 
 ## Game server.
-Game servers , sometimes referred to as dedicated game servers.
 
-Game servers are used when developing a multiplayer game or when server authoratiative processing of gameplay events is required.
+Game servers (aka dedicated game servers)
+    - Host core multiplayer logic and server authoritative gameplay processing
+    - Central piece of game architecture where core logic executes.
 
-The game server is at the center of the game architecture, serving as the location where the core logic executes.
+Core logic responsibilities
+    - Managing player and gamestate.
+    - Manage the interactions between the connected game clients and the game server.
 
-The core logic includes managing player and gamestate as well as managing the interactions between the connected game clients and the game server.
+Performance considerations
+    - Game server is the most performance-sensitive component of your architecture
+    - Must handle real-time input processing  of game client inputa and distribution of the same at scale
+    - Game server requires optimized performance and sufficient capacity, especially at launch and during peaks
 
-Game server is the most performance-sensitive aspects of a game architecture because it is resonsible for processing the inputs from a player's gaem cleint and properly distributing it to any other connected players in real-time.
+Terminology
+    - Game server (or server instance): 
+        - VM or compute resource hosting one or more game-server processes
+    - Game-server process (or game session): 
+        - Single instance of your server build hosting a game session, which is an instance of your running game that players can connect to via a player session.
+    - We refer to game server process and game session interchangeably
 
-Therefore, it is important to ensure that the game server performace is optimized and has suficient capacity, especially when the game is launched and during peak gameplay periods.
-
-Game server(or game server instance) - Compute resources, such as a virtual machine(VM), that hosts one more game server processes.
-
-Game server processes - A single instance of your game server build hosting a game session, which is an instance of your running game that players can connect to via a player session. 
-
-We refer to gameoptions server process and game session interchangeably.
-
-In AWS, there are multiple options for computer resources to host game servers, all of which provide access to scalable cloud-based capacity through elastic provisioning of resources.
+Cloud hosting games on AWS
+    - Multiple compute options available  to host game servers(EC2, containers, serverless, etc.)
+    - All offer elastic, scalable capacity through elastic provisioning of resources to match demand without managing physical hardware
 
 ### Amazon EC2 
--  Cloud-based virtual servers, known as intances, with support for multiple versions of Linux and Windows.
--  You can create instances and manage them directly like any other server or virtual machine(VM).
--  Typically, multiple game server process are deployed to an instance in order to improve efficiency and reduce costs.
--  Amazon EC2 is a good choice for game servers if you want the most control over the compute infrastructure.
+- Cloud based virtual servers, called instances
+   - Support multiple Linux and Windows versions.
+- Instance can be created and managed like any server or VM
+- Multiple game-server processes are often run on one instance
+    - Improve resource efficiency
+    - Lowers overall costs.
+-  Amazon EC2 offers maximum control over the compute infrastructure.
 
-### Amazon Gamelift Servers
-- Provides a fully-managed solution for dedicated game server hosting in the cloud as well as additional features such as matchmaking with Amazon Gamelift Server FlexMatch.
-- Gamelift servers provides a layer of abstraction on top of Amazon EC2 to make game server management easier and is available in most AWS regions so that you can host game servers close to players to reduce latency, achieve high availability and singificantly reduce costs by using Spot instances.
-- Gamelift servers are useful for game dvelopers who do not want to develop their own gmae server management and matchmaking solutions and want a solution that is managed by AWS and can scale as their game grows.
+### Amazon Gamelift Server
+- Gamelift is a fully managed dedicated game server hosting
+   - Include matchmaking with Amazon GameLift FlexMatch
+- Gamelift server provide an abstraction layer over Amazon EC2.
+   - This abstraciton simplifies server management.
+   - Available in most AWS regions which allows you to
+        - Reduce latency by hosting close to players.
+        - Ensure high availability.
+        - Cut costs with Spot instances.
+- Gamelift servers are useful for game developers who want a AWS managed and scalable solution that can scale as their game grows.
+      - Useful for teams who lack the backend expettise to build ther own game server manaement and mathcmaking solutions. 
 
 ### Amazon Elastic Container Service and Amazon Elastic Kubernetes Service(Amazon ECS and EKS)
-- ECS is fully managed container orchestration service that neables you to run docker-based containers
-- EKS enables you to run Docker-based containers that are built using Kubernetes.
-- Using ECS and EKS(container based technologies), can help you to improve the  utilization of your compute infrastructure by allowing you to efficiently pack many game server processes or other game application isntances in to an EC2 instance.
-- You can further reduce operational overhead by using AWS Fargate, which is a serverless computer platform for running container and is compatible with both Amazon EKS and Amazon ECS.
-- Fargate is best suited for use cases where you want to run game servers in containers without responsibility for operating the underlying instances that the containers run on. 
 
+-ECS
+    - Fully managed Docker container orchestration
+
+-EKS
+    - Kubernetes-based Docker container orchestration
+
+-Containerized hosting benefits
+    - Packs multiple game-server process or other game application instances onto a single EC2
+    - Boosts infrastructure utilization
+
+-AWS Fargate
+    - Serverless compute for running containers and is compatible with ECS/EKS.
+    - Eliminates need to manage underlying EC2 instances
+    - Ideal for running containerized game servers where you dont want operational responsibility.
+    
 ### AWS Outposts
 - Outposts allows you to to run on-premises run AWS services in any data center or on-premises facility, which can enable games to run on-premises environments and AWS using the same services to support a hybrid cloud adoptiong strategy.
 
 ### AWS Local Zones
-- Local Zones serve as extensions of AWS regions to allow you to run your gameservers and other latency-sensitive workloads  closer to your players or development teams.
+- Local Zones extend AWS regions, hosting game servers and latency-sensitive workloads closer to players or dev teams.
 
 ### AWS GLobal accelerator
 - Global accelerator can be used to improve performance for player traffic to your game servers.
@@ -194,13 +219,8 @@ In AWS, there are multiple options for computer resources to host game servers, 
 - Well suited for asynchronous game server use cases like turn-based game scenarios
 - Ideal when compute needs are lightweight, codebase is small or where gameplay functionality can be designed using a stateless microservices architecture.
 - Also ideal where gameplay functionality can be designed using a stateless microservices architecture.
-
-Functions start on demand per event or request, not as always-on servers
-
-Provides the highest level of runtime abstraction with built-in infrastructure management
-
-- Lambda functions run on an event-drive per-request basis, rather than running as part of a long running game server process
-- Lambda provides the most runtiem abstractin of the options described because the underluing applciation is provided out of the box for developers to choose from to host their code.
+- Functions start on demand per evenr or request not as always-on servers.
+- Provides the highest level of runtime abstraction for developers to choose from to host their code.
 
 # Things to keep in mind.
 
