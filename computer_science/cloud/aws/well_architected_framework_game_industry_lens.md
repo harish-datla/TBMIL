@@ -276,7 +276,7 @@ AWS offers multiple services to help implement these messaging patterns in your 
 - Many games tasks can be decoupled and handled in the backgorund such as updating a leaderboard or playtime values in a database.
 - This approach is very effective to decouple various parts of your game and independently scale the player-facing features from backend processing.
 
-**Note**
+**Note**  
     SNS is a push based mechanism and SQS is pull based mechanism, the publishing part more or less remains the same.
 
 ### Amazon Managed Streaming for Apache Kafka (Amazon MSK)
