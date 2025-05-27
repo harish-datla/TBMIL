@@ -412,7 +412,7 @@ Here is a breakdown of key best practices within these areas, based on the sourc
 
 ## Prepare
 
-### Define your game's live operations (LiveOps) strategy**.
+### GAMEOPS01 - How do you define your game's live operations (LiveOps) strategy?
 *   **GAMEOPS_BP01: Use game objectives and business performance metrics to develop your live
 operations strategy.**
       - This involves consulting business stakeholders(producers, publishing partners) for objectives and performance metrics, for example
@@ -438,9 +438,22 @@ operations strategy.**
         - coordinate the scheduling of required maintenance that may require downtime at other times throughout the months and contribute towards your availability SLA.
       - These metrics can also help you to determin at which stage of your game'es lifecycle you should incorporate a live operations team(Live Ops) to monitor game health, collect direct game feedback, and build streamined and automated release processes. For example.
         - New game might wait a certain scale is achieved(measured by revenue, DAU) before setting up a dedicated live operations team.
-        - An established studio might already be good at liveos experience, so they can just onboard the new game whenever they deem fit.
-*   GAMEOPS_BP02: Validate and test your existing game software before reusing it in your game
-*   **Organize your environments using multiple accounts**. It's recommended to create separate AWS accounts for each game environment (dev, test, staging, prod), as well as for security, logging, and central shared services. This helps reduce resource contention and manage service quotas, especially as the game or team grows. AWS Organizations can manage this multi-account structure centrally, and AWS Control Tower simplifies setting up a secure, governed multi-account environment (landing zone). A hierarchical structure using Organizational Units (OUs) can group accounts by environment or studio, useful for managing multiple games. Redesigning the multi-account strategy after launch can be difficult.
+        - An established studio might already be good at liveops experience, so they can just onboard the new game whenever they deem fit usign existing processes in place.
+
+*   **GAMEOPS_BP02: Validate and test your existing game software before reusing it in your game**
+     - Organizations often reuse existing components and source code from previous games to save on development time and cost.
+     - However, these legacy components or code may not have been thoroughly reviewed or tested and instead rely on the past performance before taking a decision to integrate it in the new game.
+     - Relying solely on past performance carries the risk of reintroducing past performance and stability issues into a new project.
+     - Hence its important to implement robust testing when reusing existing components and source code from previous games.
+     - Reusing existing code without robust testing might lead to pitfalls like the following
+       - If issues arise during production, developers might lack sufficient knowledge to debug/fix the old code/component, or lack the time to rewrite it to alleviate their operational plan.
+       - If the original authors are unavailable, this can increase the time needed for fixes.
+       - If previously used code or components had an issue, replacing or fixing them must be a priority before they are used again.
+    
+### GAMEOPS02 - How do you structure your accounts for hosting your game environments?. 
+* **GAMEOPS_BP03: Adopt a multi-account strategy to isolate different games and applications
+into their own accounts.**
+It's recommended to create separate AWS accounts for each game environment (dev, test, staging, prod), as well as for security, logging, and central shared services. This helps reduce resource contention and manage service quotas, especially as the game or team grows. AWS Organizations can manage this multi-account structure centrally, and AWS Control Tower simplifies setting up a secure, governed multi-account environment (landing zone). A hierarchical structure using Organizational Units (OUs) can group accounts by environment or studio, useful for managing multiple games. Redesigning the multi-account strategy after launch can be difficult.
 *   **Organize infrastructure resources using resource tagging**. Proper tagging (e.g., owner, project, app, cost-center, environment, role) helps identify and group resources for operational support and cost tracking. Tagging policies can be enforced using AWS Config.
 *   **Manage game deployments**. Adopt strategies that minimize downtime and player impact. **Infrastructure as Code (IaC)** tools like AWS CloudFormation or Terraform are a best practice for managing infrastructure to reduce human errors and ensure consistency.
     *   **Rolling substitution** is a strategy to release updates without shutting down the game, requiring backward compatibility. Server instances are replaced incrementally, or a new Auto Scaling group handles new traffic. This can also be used for backend services like databases and caches if deployed for high availability.
