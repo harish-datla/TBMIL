@@ -343,3 +343,89 @@ AWS offers multiple services to help implement these messaging patterns in your 
     - investigating and responding to player reports
     - managing infrastructure pre-scaling activities to prepare for anticipated large-sclae events like new season launches and game content releases.
     - to address typical game maintenance activites.
+
+
+# Well Architected Pillars
+- This section descirbes games indutry lens in the context of the five pillars of the Well Architected Framework, Each pillar discusses design principles, definitions, best practices, evaluation questions, considerations, key services and useful links.
+- Pillars
+    - Operational excellence
+    - Security
+    - Reliability
+    - Performance efficiency
+    - Cost optimization
+
+## Operational excellence
+- This pillar focuses on best practices for deploying and operating cloud-based games at any scale.
+- It is important to focus on operational excellence to maintain a positive player experience and take preventative measures to prepare for and recover from issues that impact thier experience.
+
+### Design principles
+- In addition to the design principles from the well-architected framework whitepaper, the following desing principles can help you to achieve operational excellence.
+
+#### Define measurable and achievable objectives for game operations teams, adapt as necessary
+- Due to the hits-drive nature of games, it is difficult to determine ahad of time how many players will show up to play your game when it launches.
+- it is diffucult to determine what expectations players will have for ongoing game operations.
+- It is important to set ambitious but achievable goals with stakeholders and design an approach that can be scaled up if our game exceed expectations and scaled down while game development teams optimize the player experience.
+- Adequately prepare and test ahead of time to meet these requirements and make sure that business and tehcnical stakeholders are aligned on target objectives for operating the game.
+- With targets defined, the game teams are able to achieve appropriate balance between cost and performance during planning, designing, provisioning, deploying and operating the game backend infrastructure.
+#### Use operational runbooks to proactively plan and pre-scale for game launches and special events
+- Game operations teams should coordinate wuth business stakeholders to model projections for anticipated peak player concurrency for events and perform proactive planning to pre-scale infrastructure capacity ahead of time.
+- Due to the fluctuating nature of player traffic during events, prioir planing and pre-scaling activities should augment your existing automated scaling systems to improve your chance of success during an event and ensure that you have enough resource to provide a positive player experience.
+- Develop operational runbooks to ensure consistency in the process.
+
+### Establish an operating model for receiving, investigating, and responding to player support requests
+- Post-launch, its is important to monitor reports of compliants and issues with the game.
+- Implement appropriate systes to interact with players in a secure and effective manner to adequately resolve player issues in community forums, social media, e-mail, ticketing systems, call centers or automated chat bot solutions.
+
+
+## Definition
+
+Extending the operationl excellence pillar int he Well-Architected Framework for cloud-based games.
+Throught this lens, we will review how eahc of the following factors contribute towards operational excellence for cloud-based games.
+
+There are three best practices areas for operational excellence of games workloads in the cloud and best practices for your cloud architecture:
+- Prepare
+- Operate
+- Evolve
+
+### Prepare
+
+#### GAMEOPS01 - How do you define your game's live operations(LiveOps) startegy ?
+
+##### GAMEOPS_BP01: Use game objectives and business performance metrics to develop your live operations strategy ?
+Here’s a compressed version of the content in bullet points, preserving the core meaning:
+
+Engage Business Stakeholders:
+
+Consult game producers and publishing partners to define objectives and performance metrics.
+
+Use this input to shape game management plans (e.g., maintenance windows, update schedules, system reliability goals).
+
+Define Key Metrics:
+
+Common metrics include:
+
+Player concurrency (CCU)
+
+Daily/monthly active users (DAU/MAU)
+
+Infrastructure budget and financial goals
+
+Content/feature release frequency
+
+In-game event frequency for engagement
+
+Guide Operational Planning:
+
+Objectives influence design, release management, observability, and support strategies.
+
+Example: Monthly content updates with zero downtime inform release deployment strategies and maintenance scheduling.
+
+Determine Live Ops Involvement:
+
+Use metrics to decide when to involve a Live Ops team (e.g., after reaching a specific scale).
+
+New games may delay Live Ops setup until growth milestones are met.
+
+Experienced studios might integrate Live Ops early based on prior experience.
+
+Let me know if you'd like this turned into a slide or diagram too.
