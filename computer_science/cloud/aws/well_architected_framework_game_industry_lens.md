@@ -412,7 +412,28 @@ Here is a breakdown of key best practices within these areas, based on the sourc
 
 ## Prepare
 
-*   **Define your game's live operations (LiveOps) strategy**. This involves consulting business stakeholders for objectives and performance metrics (e.g., player concurrency (CCU), daily/monthly active users (DAU/MAU), infrastructure budget, release frequency). These metrics inform decisions about maintenance windows, update schedules, and reliability/recoverability goals. Such objectives can help determine when a dedicated Live Ops team is needed.
+*   **Define your game's live operations (LiveOps) strategy**.
+      - This involves consulting business stakeholders(producers, publishing partners) for objectives and performance metrics, for example
+        - player concurrency (CCU)
+        - daily/monthly active users (DAU/MAU)
+        - infrastructure budget
+        - financial targets
+        - release frequency of new content and features
+        - frequency of in-game events
+        - promotions to increase player engagement
+      - This can help you to develop plans for managing the game, for example
+        - Maintanance windows
+        - Software and infra update schedule
+        - System reliability/recoverability goals
+      - These objective and metrics feed in to decisions about
+        - game design
+        - release management
+        - observability
+        - support needed for efficient operations
+      - For sample, your game might have an obective to release new content updates at lest once each month with no downtime during release.
+      - Based on your defined objective, you can
+        - release deployment strategy and corodinate the scheduling of required maintenance that may require downtime at other times
+      - These metrics inform decisions about maintenance windows, update schedules, and reliability/recoverability goals. Such objectives can help determine when a dedicated Live Ops team is needed.
 *   **Organize your environments using multiple accounts**. It's recommended to create separate AWS accounts for each game environment (dev, test, staging, prod), as well as for security, logging, and central shared services. This helps reduce resource contention and manage service quotas, especially as the game or team grows. AWS Organizations can manage this multi-account structure centrally, and AWS Control Tower simplifies setting up a secure, governed multi-account environment (landing zone). A hierarchical structure using Organizational Units (OUs) can group accounts by environment or studio, useful for managing multiple games. Redesigning the multi-account strategy after launch can be difficult.
 *   **Organize infrastructure resources using resource tagging**. Proper tagging (e.g., owner, project, app, cost-center, environment, role) helps identify and group resources for operational support and cost tracking. Tagging policies can be enforced using AWS Config.
 *   **Manage game deployments**. Adopt strategies that minimize downtime and player impact. **Infrastructure as Code (IaC)** tools like AWS CloudFormation or Terraform are a best practice for managing infrastructure to reduce human errors and ensure consistency.
