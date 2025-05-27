@@ -412,9 +412,9 @@ Here is a breakdown of key best practices within these areas, based on the sourc
 
 ## Prepare
 
-*   **Define your game's live operations (LiveOps) strategy**.
-*   GAMEOPS_BP01: Use game objectives and business performance metrics to develop your live
-operations strategy.
+### Define your game's live operations (LiveOps) strategy**.
+*   **GAMEOPS_BP01: Use game objectives and business performance metrics to develop your live
+operations strategy.**
       - This involves consulting business stakeholders(producers, publishing partners) for objectives and performance metrics, for example
         - player concurrency (CCU)
         - daily/monthly active users (DAU/MAU)
