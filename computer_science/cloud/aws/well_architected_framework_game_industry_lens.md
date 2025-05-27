@@ -377,20 +377,6 @@ AWS offers multiple services to help implement these messaging patterns in your 
 - Implement appropriate systes to interact with players in a secure and effective manner to adequately resolve player issues in community forums, social media, e-mail, ticketing systems, call centers or automated chat bot solutions.
 
 
-## Definition
-
-Extending the operationl excellence pillar int he Well-Architected Framework for cloud-based games.
-Throught this lens, we will review how eahc of the following factors contribute towards operational excellence for cloud-based games.
-
-There are three best practices areas for operational excellence of games workloads in the cloud and best practices for your cloud architecture:
-- Prepare
-- Operate
-- Evolve
-
-Okay, I will provide a summary for both the Operational Excellence pillar and the Security pillar from the sources, formatted in Markdown suitable for GitHub.
-
-***
-
 # Operational Excellence Pillar
 
 The **Operational Excellence pillar** focuses on **best practices for deploying and operating cloud-based games at any scale**. The primary goal is to **maintain a positive player experience** and implement **preventative measures to prepare for and recover from issues** that might impact that experience.
