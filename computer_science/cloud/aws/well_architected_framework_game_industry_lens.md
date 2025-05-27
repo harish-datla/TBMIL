@@ -383,9 +383,24 @@ The **Operational Excellence pillar** focuses on **best practices for deploying 
 
 In addition to the general design principles of the AWS Well-Architected Framework, this Lens highlights specific design principles for achieving operational excellence in games:
 
-*   **Define measurable and achievable objectives for game operations teams and adapt as necessary**. Predicting player numbers and expectations is difficult in the hits-driven nature of games, making it important to set ambitious but achievable goals with business and technical stakeholders. This helps balance cost and performance during the planning, designing, provisioning, deploying, and operating phases of game backend infrastructure.
-*   **Use operational runbooks to proactively plan and pre-scale for game launches and special events**. Game operations teams should model projections for anticipated peak player concurrency during events and pre-scale infrastructure capacity. Runbooks help ensure consistency in this process.
-*   **Establish an operating model for receiving, investigating, and responding to player support requests**. Post-launch, monitoring complaints and issues is vital, requiring effective and secure systems to interact with players and resolve issues.
+*   **Define measurable and achievable objectives for game operations teams and adapt as necessary**.
+      - Predicting player numbers and expectations is difficult in the hits-driven nature of games, making it important to set ambitious but achievable goals with business and technical stakeholders.
+      - The game architecture, liveops, devops etc should be designed to scale up if the game's popularity exceeds expectations and scale down as needed while the player experience is optimized.
+      - Adequate preparation and testing are necessary to meet these scalability requirements.
+      - Ensure that both business and technical stakeholders are aligned on the target objectives for operating the game.
+      - Having well-defined targets allows game teams to balance cost and performance throughout the process  of planning, designing, provisioning, deploying, and operating the game backend infrastructure.
+*   **Use operational runbooks to proactively plan and pre-scale for game launches and special events**.
+      - Game operations teams should model projections for anticipated peak player concurrency during events and pro-actively plan to pre-scale infrastructure capacity.
+      - Prior plann and pre-scaling activities alongside auto-scaling to handle traffic spikes during events to improve your chance of success as player traffic during eents is inherently fluctuating.
+      - Ensure you have enough resources to rpovide a positive player experience.
+      - Develop operational runbookings help ensure consistency in this process.
+*   **Establish an operating model for receiving, investigating, and responding to player support requests**.
+      - Post-launch, monitoring complaints and issues is vital, requiring you to implement effective and secure systems to interact with players and resolve issues. For example :                 - community forums
+         - social media
+         - e-mail
+         - ticketing systems
+         - call center
+         - automated chat bot solutions.
 
 The best practices for operational excellence are organized into three areas:
 
