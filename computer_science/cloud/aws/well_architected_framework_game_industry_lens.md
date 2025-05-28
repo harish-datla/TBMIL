@@ -507,61 +507,48 @@ operations strategy.**
       - can be automated to shutdown resources after hours and save costs.
     - Seperation of accounts at this level of granularity makes it easier to monitor infrastructure costs for each of the environments supporting a game.
 
-*   **Organize infrastructure resources using resource tagging**. Proper tagging (e.g., owner, project, app, cost-center, environment, role) helps identify and group resources for operational support and cost tracking. Tagging policies can be enforced using AWS Config.
-*   **Manage game deployments**. Adopt strategies that minimize downtime and player impact. **Infrastructure as Code (IaC)** tools like AWS CloudFormation or Terraform are a best practice for managing infrastructure to reduce human errors and ensure consistency.
-    *   **Rolling substitution** is a strategy to release updates without shutting down the game, requiring backward compatibility. Server instances are replaced incrementally, or a new Auto Scaling group handles new traffic. This can also be used for backend services like databases and caches if deployed for high availability.
-    *   **Blue/green deployment** minimizes downtime and allows easy rollback by setting up two identical environments (blue=existing, green=new) and flipping traffic when green is ready. The blue environment is kept for failback. This might involve updating matchmaking services, DNS records, or routing weights. A drawback is the cost of the standby environment, though deploying new software processes alongside existing ones on the same servers is a variant to mitigate this.
-    *   **Canary deployment** releases a new build or feature to a small, restricted set of players in production. Telemetry data is collected and analyzed to identify issues before rolling out more widely. This can be for standard releases or **A/B testing**. It typically costs less than a full blue/green environment. Only a single canary is recommended on production at a time to simplify troubleshooting.
-    *   **Legacy traditional deployment** involves shutting down the game during a scheduled maintenance window to update all servers. This impacts all players and should be avoided whenever possible. It risks player attrition and revenue loss if frequent or extended.
-*   **Pre-scale infrastructure required to support peak requirements**. Scale infrastructure ahead of large game events (launches, content releases, promotions) based on estimated demand. Coordinate with sales and marketing for projections. **Load and performance tests** should be run against production-like environments using gameplay bots to simulate player traffic, identify bottlenecks, and inject failures. Automated scaling should be augmented with prior planning and pre-scaling for events. Request higher Service Quotas for services beforehand.
-*   **Conduct performance engineering and load testing before launch**. Simulate player behavior with bots. Performance engineering is an iterative process of monitoring, testing, and optimizing code and infrastructure. APM or debugging tools (like AWS X-Ray) help isolate issues and track behavior. Injecting failures during load tests is important to see system behavior. Human testers during load tests can also catch issues.
+* **GAMEOPS_BP04: Organize infrastructure resources using resource tagging.**
+  - Resource tagging and grouping helps you to effectively manage and track your infratructure resources in AWS.
+  - It is recommended to use proper resource tagging and grouping that can help identify each resource's
+    - owners
+    - project
+    - app
+    - cost-center
+    - oter useful data
+  - Tagged resource can be grouped together, using resource groups, which assists with operational support. 
+  - As a best practice, you should define tagging policies.
+  - Typical strategies for tagging policies include resource tags for identifying
+    - the resource owner(like team name, individual name)
+    - the name of the game/app/project name
+    - the studio name
+    - environment(dev/test/prod/staging/common)
+    - role of the resource(database server/web server/dedicated game server/ app server/ cache server)
+    - add additional tags to help with business and IT needs
+  - AWS config can also help to enforce tagging polciy at resource creation and update time.
+  - Tags and resource groups are avaiable from the AWS management console, AWS CLI, API operations.
+
+### GAMEOPS03 - How do you manage game deployments?
+
+* **GAMEOPS_BP05: Adopt a deployment strategy that minimizes impact to players**
+
+* **GAMEOPS_BP06: Pre-scale infrastructure required to support peak requirements**
+
+* **GAMEOPS_BP07: Conduct performance engineering and load testing before launch by
+simulating player behavior**
 
 ## Operate
 
-*   **Monitor the health of the game**. Instrument the game and backend services to detect player-impacting issues, in addition to monitoring social media. Game clients should implement logging and reporting for client-side issues (without PII). Use observability solutions like **Amazon CloudWatch Synthetics** for backend health, **AWS X-Ray** for tracing distributed service requests, and sending custom logs/metrics to **Amazon CloudWatch**. Third-party error reporting and APM solutions are also popular. Game operations teams and community managers should monitor social channels for feedback and bug reports.
+### GAMEOPS04 - How do you monitor the health of the game?
+
+* **GAMEOPS_BP08: Instrument the game to detect and monitor player-impacting issues.**
 
 ## Evolve
 
-*   **Optimize your game over time**. Monitor key game metrics to identify player trends and patterns for rebalancing the game, optimizing design, and improving infrastructure. Capture **game telemetry data** from clients and services to understand player activity (e.g., player movements). This data helps game designers review gameplay and balance elements. The raw data is processed for analytics and visualization. The **Game Analytics Pipeline solution implementation** provides a scalable serverless pipeline for ingesting, storing, and analyzing telemetry data, offering quick insights. AWS provides specialized services for custom big data processing and analytics for telemetry.
+### GAMEOPS05 - How do you optimize your game over time?
 
-***
+* **GAMEOPS_BP09: Monitor key game metrics that can help identify player trends and
+patterns; use the information to rebalance the game, optimize game design, and improve the
+infrastructure**
 
-# Security Pillar
 
-The **Security pillar** involves protecting information, systems, and assets while delivering business value through risk assessments and mitigation. Given their global visibility and large player bases, games are attractive targets for exploiters. Understanding the **Shared Responsibility Model** between AWS and the customer is crucial for maintaining a strong security posture.
-
-In addition to general security design principles, this Lens highlights specific design principles for securing games:
-
-*   **Monitor and moderate player usage behavior:** Capture and analyze usage data to understand player interactions and detect/respond to abusive behavior that can degrade the player experience.
-
-The best practices for security are structured across several areas:
-
-## Secure Access Control
-
-*   **Authenticate requests to game backend services**. All requests should be authenticated to prevent unwanted activity. An authentication service should return secure short-lived tokens (e.g., JWT) to the game client after successful login, used to authenticate and authorize subsequent requests. You can build your own system or use Amazon Cognito User Pools for user sign-up, sign-in, and identity management, which can integrate with third-party providers. Services like Application Load Balancer and Amazon API Gateway integrate with Cognito to simplify authentication.
-*   **Handle anonymous access securely**. If a game supports unauthenticated access, use client authentication for secure interactions with the backend. For game clients using AWS services, use Amazon Cognito Identity Pools to retrieve short-lived credentials for unauthenticated users to sign requests. A custom backend service via Amazon API Gateway can provide authoritative control and custom authorization logic.
-*   **Enforce strong password policies**. If user accounts require passwords, enforce strong policies, supported by services like Amazon Cognito User Pools.
-*   **Provide Multi-Factor Authentication (MFA) option**. Due to the value of player accounts and the risk of compromise, offer players the option to configure MFA. MFA challenges users with a temporary code via email, phone, or app. It can protect accounts based on suspicious activity or location, and is supported by Amazon Cognito User Pools.
-*   **Restrict access of downloadable content**. Access to game content should be restricted to authorized clients and users. Use Amazon S3 for storage and CloudFront for global delivery, leveraging their built-in restriction mechanisms.
-*   **Manage S3 content access securely**. Use IAM policies/roles for internal applications and management. S3 Bucket Policies can grant cross-account access. S3 Access Points simplify managing access to shared data for specific applications.
-*   **Generate temporary URLs**. Use presigned URLs generated from your backend using your credentials to grant time-limited access to objects, without requiring the user to have an account or IAM permissions. This is useful for authorized content or temporary access.
-*   **Serve private content via CloudFront with signed URLs/cookies**. Keep content private in S3 and serve it through CloudFront configured to require signed URLs or signed cookies for authorized access. These can specify an expiration and optionally restrict by IP address.
-
-## Detective Controls
-
-*   **Monitor and analyze player usage behavior**. Capture, store, and analyze data on how players use features and interact with others to detect inappropriate behavior. Instrument the game to collect structured logs (without PII). Send logs to solutions like the Game Analytics Pipeline, CloudWatch Logs, OpenSearch Service, or third-party tools.
-*   **Implement moderation tools**. Analyze logs and recordings for moderation purposes. Use services like Amazon Transcribe to convert voice chat audio to text. Apply AWS AI/ML services (Amazon Comprehend for text, Amazon Rekognition for images/video) for automated moderation.
-*   **Detect fraudulent activity**. Use Amazon Fraud Detector (ML-based) to identify potential fraud quickly, such as fraudulent purchases, compromised accounts, and high-risk registrations.
-*   **Detect anomalies**. Use Amazon Lookout for Metrics (ML-based) to automatically detect and diagnose anomalies in business and operational data (e.g., dips in revenue or logins).
-*   **Build custom ML models**. For specific use cases like content moderation, toxicity detection, cheat detection, or fraud detection, you can build custom models using Amazon SageMaker.
-*   **Capture system-level logs**. Store logs from services like S3, CloudFront, and ALB in S3 to correlate with player usage data and analyze system-level information. Analyze these logs using logging solutions or Amazon Athena in S3.
-*   **Monitor bucket policies**. Use Access Analyzer for S3 to monitor bucket access policies and ensure unintended access is prevented.
-*   **Security monitoring**. Use AWS Security Hub for a comprehensive view of your security state, aggregating findings from various services (including GuardDuty) and checking against standards.
-*   **Control bot traffic**. Use WAF Bot Control to gain visibility and control over pervasive bot traffic.
-*   **Ransomware protection:** Refer to best practices for protecting your cloud environment from ransomware.
-
-## Incident Response
-
-*   **Define and enforce policies for player misconduct**. Establish clear policies for responding to player misconduct and abusive behavior.
-*   **Implement an incident response plan**. Have a plan in place to handle bad actors and abusive behavior.
-*   **Ban accounts associated with bad actors**. Implement a process to impose bans or restrictions on confirmed violators, typically managed by community or trust and safety teams. Automated workflows using Step Functions and Lambda can update a separate banning system of record (e.g., a DynamoDB table). A separate banning system is valuable if player accounts are used across multiple games with different policies.
+# Security
