@@ -451,9 +451,24 @@ operations strategy.**
        - If previously used code or components had an issue, replacing or fixing them must be a priority before they are used again.
     
 ### GAMEOPS02 - How do you structure your accounts for hosting your game environments?. 
-* **GAMEOPS_BP03: Adopt a multi-account strategy to isolate different games and applications
-into their own accounts.**
-It's recommended to create separate AWS accounts for each game environment (dev, test, staging, prod), as well as for security, logging, and central shared services. This helps reduce resource contention and manage service quotas, especially as the game or team grows. AWS Organizations can manage this multi-account structure centrally, and AWS Control Tower simplifies setting up a secure, governed multi-account environment (landing zone). A hierarchical structure using Organizational Units (OUs) can group accounts by environment or studio, useful for managing multiple games. Redesigning the multi-account strategy after launch can be difficult.
+
+* **GAMEOPS_BP03: Adopt a multi-account strategy to isolate different games and applications into their own accounts.**
+
+- Game architecture on AWS should use multiple accounts for better management.
+- These accounts should be logically organized to:
+    - Ensure proper isolation between environments.
+    - Reduce the blast radius in case of failures or security issues.
+    - Simplifies operations as the game infrastructure scales.
+
+- AWS accounts that host game infrastructure are typically grouped into following logical environments.
+    - **Game development environments(Dev)** are used by developers for developing the software and systems for the game.
+    - **Test or QA environments** are used for performing integration testing, manual quality assurance(QA), and any other automated testing that must be conducted.
+    - **Staging or pre-production environments** are used for hosting final built software so that load testing and smoke testing can be conducted prior to launching to production.
+    - **Live or production environments** are used for hosting the live software and infrastructure and serving production traffic from players.
+    - **Shared services or tools envrionments** provide access to common platforms, software and tools that are used by many different teams. For example, a self-hosted source control repository and game build farm might be hosted in a shared services account.
+    - **Security environments** are used for consoldating centralized logs and security technologies that are used by teams that focus on cloud security.
+ 
+  
 *   **Organize infrastructure resources using resource tagging**. Proper tagging (e.g., owner, project, app, cost-center, environment, role) helps identify and group resources for operational support and cost tracking. Tagging policies can be enforced using AWS Config.
 *   **Manage game deployments**. Adopt strategies that minimize downtime and player impact. **Infrastructure as Code (IaC)** tools like AWS CloudFormation or Terraform are a best practice for managing infrastructure to reduce human errors and ensure consistency.
     *   **Rolling substitution** is a strategy to release updates without shutting down the game, requiring backward compatibility. Server instances are replaced incrementally, or a new Auto Scaling group handles new traffic. This can also be used for backend services like databases and caches if deployed for high availability.
