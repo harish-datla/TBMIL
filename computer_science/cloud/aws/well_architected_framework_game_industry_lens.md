@@ -467,8 +467,46 @@ operations strategy.**
     - **Live or production environments** are used for hosting the live software and infrastructure and serving production traffic from players.
     - **Shared services or tools envrionments** provide access to common platforms, software and tools that are used by many different teams. For example, a self-hosted source control repository and game build farm might be hosted in a shared services account.
     - **Security environments** are used for consoldating centralized logs and security technologies that are used by teams that focus on cloud security.
- 
-  
+    - It is recommended to create environment-based account separation for each game
+        - dev
+        - test
+        - staging
+        - prod
+    - Also create separate accounts for:
+        - Security
+        - Logging
+        - Central Shared Services.
+    - Smaller game studios might be tempted to create one aws account for each of these environments, since the number of servers will be usually hundred or less.
+    - However this simplified model will not scale well because many AWS services share resource and API-level Service Quotas for an entire account within a particular region when determining how to logically organize accounts when you setup
+    - AWS accounts only incur cost for consuming services deployed in to them.
+    - This must be considered  when determining how to logically organize accounts, a good logical organization can help you to effectively reduce resource contention and service quotas as your game grows.
+    - Its painful and difficult to reorganize accounts later, hence emphasis has to beput to create a fine-grained account structure initially
+    - Its better to design a more fine-grained account structure where individual applications supporting your game have their own development, test, staging and producution accounts for each.
+    - AWS Organizations provides centralized management of accounts and goven your environment as you grow and scale of your resources, can be used to setup hierarchy and grouping of AWS accounts, and define organizational units(OU) to apply common OU-level polciesi to them through service control policies(SCPs)
+    - with aws organizations
+      - you can programmatically crete new accounts and allocate resources
+      - group accounts to organize your workflows
+      - apply policies to accounts groups for governance
+      - simplify billing by using a single payment method for all your accounts
+    - aws organizations is integrated with other services, so you can
+      - define central configurations
+      - security mechanisms
+      - audit requirements
+      - resource sharing across accounts in your organization.
+    - AWS Control tower provides the easiest way to set up and govern a secure, multi-account environment, called a landing zone.
+    - Control tower creates your landing zone using AWS organizations, bringing ongoing account management and governance as well as implementation best practices
+    - AWS config, AWS trusted Advisor, and Security Hub are services that provide with an aggregated or centralized view of your account's hygiene. 
+    - This isolation will help each game environment (production, non-production) can have its own customized permissions and guardrails.
+    - Production account setup should include
+      - Necessary gaurdrails
+      - Access restrictions
+      - Monitoring and Alerting
+      - Security Tools
+    - Non-production account setup should include
+      - lighter level of guardrails and permissions.
+      - can be automated to shutdown resources after hours and save costs.
+    - Seperation of accounts at this level of granularity makes it easier to monitor infrastructure costs for each of the environments supporting a game.
+
 *   **Organize infrastructure resources using resource tagging**. Proper tagging (e.g., owner, project, app, cost-center, environment, role) helps identify and group resources for operational support and cost tracking. Tagging policies can be enforced using AWS Config.
 *   **Manage game deployments**. Adopt strategies that minimize downtime and player impact. **Infrastructure as Code (IaC)** tools like AWS CloudFormation or Terraform are a best practice for managing infrastructure to reduce human errors and ensure consistency.
     *   **Rolling substitution** is a strategy to release updates without shutting down the game, requiring backward compatibility. Server instances are replaced incrementally, or a new Auto Scaling group handles new traffic. This can also be used for backend services like databases and caches if deployed for high availability.
